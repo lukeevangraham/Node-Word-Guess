@@ -10,7 +10,7 @@ function Letters(character, isKnown, revealer, checker) {
     },
     this.checker = function checker(characterGuess) {
         if (characterGuess === this.character) {
-            isKnown = true;
+            this.isKnown = true;
         }
     }
     console.log(this);
