@@ -7,20 +7,23 @@ function Word(answer) {
         var letter = new Letter(answer[i]);
         this.objArray.push(letter);
     }
+
+}
     
-    this.currentDisplay = function() {
-        currentDisplay = "";
-        for (let i = 0; i < this.objArray.length; i++) {
-            currentDisplay += this.objArry[i] + " ";
+    Word.prototype.currentDisplay = function() {
+        let toDisplay = []
+        for (let index = 0; index < answer.length; index++) {
+            toDisplay.push(letter.toString)
         }
-        console.log(answerLog + "\n");
+        return toDisplay.concat()
     }
 
     this.testGuess = function(guess) {
         Letter.checker(guess)
     }
-    
-    console.table(this);
-}
+    console.log("THIS: ", this.objArray[0].toString)
+    console.log("LOOK HERE: ", this.currentDisplay());
 
 test = new Word("test");
+
+// module.exports = Word;
