@@ -1,19 +1,18 @@
-function Letters(character) {
+function Letter(character) {
     this.character = character;
-    this.isKnown = false;
-    this.checker = function checker(characterGuess) {
-        if (characterGuess === this.character) {
-            this.isKnown = true;
+    this.known = false;
+    this.toString = function() {
+        if (this.known) {
+            return this.character
+        } else {
+            return "_"
+        }
+    }
+    this.checker = function(guess) {
+        if (guess === this.character) {
+            this.known = true
         }
     }
 }
 
-Letters.prototype.toString = function() {
-    if (this.isKnown === true) {
-        return this.character;
-    } else {
-        return "_"
-    }
-},
-
-module.exports = Letters;
+module.exports = Letter;
