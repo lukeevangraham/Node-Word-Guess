@@ -16,7 +16,9 @@ function Word(answer) {
         this.wordObject.push(letter);
     }
     
-    this.currentDisplay = this.wordObject + ''
+    this.toString = function() {
+        return this.wordObject.join(" ")
+    }
 
     this.testGuess = function(guess) {
         for (let i = 0; i < this.wordObject.length; i++) {
@@ -29,8 +31,10 @@ function Word(answer) {
     // console.log("LOOK HERE: ", this);
 }
 
-test = new Word("test");
+// test = new Word("test");
 
-test.testGuess("t")
+// test.testGuess("t")
 
-console.log("BIG TIME: ", test)
+// console.log("\n" + this + "\n")
+
+module.exports = Word;
