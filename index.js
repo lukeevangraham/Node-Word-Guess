@@ -11,7 +11,12 @@ function askForLetter() {
     ]).then(function(answers) {
         word.testGuess(answers.enteredLetter)
         console.log(word + '\n')
-        askForLetter()
+        guessCountRemaining --;
+        console.log("Remaining Guesses: ", guessCountRemaining)
+        if (guessCountRemaining >= 1) {
+            askForLetter()
+            
+        }
     })
 }
 
@@ -19,9 +24,15 @@ var randomWord = possibleWords[Math.floor(Math.random() * possibleWords.length)]
 
 let word = new Word(randomWord)
 
-console.log(word + '\n')
+let guessCountRemaining;
 
+function setupNewWord() {
+    guessCountRemaining = 10
+    
+    console.log(word + '\n')
+}
 
+setupNewWord()
 askForLetter()
 
 
