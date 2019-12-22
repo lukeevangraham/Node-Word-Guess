@@ -23,18 +23,8 @@ function Word(answer) {
     this.testGuess = function(guess) {
         for (let i = 0; i < this.wordObject.length; i++) {
             this.wordObject[i].checker(guess)
-            
         }
-        // Letter.checker(guess)
     }
-    
-    // console.log("LOOK HERE: ", this);
 }
-
-// test = new Word("test");
-
-// test.testGuess("t")
-
-// console.log("\n" + this + "\n")
 
 module.exports = Word;

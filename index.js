@@ -9,13 +9,20 @@ function askForLetter() {
     message: "Guess a letter"
         }
     ]).then(function(answers) {
+        let preCheckString = word + "";
         word.testGuess(answers.enteredLetter)
+        let postCheckString = word + ""
+
+        if (preCheckString === postCheckString) {
+            console.log("\nINCORRECT!")
+        } else {
+            console.log("\n CORRECT!")
+        }
         console.log(word + '\n')
         guessCountRemaining --;
-        console.log("Remaining Guesses: ", guessCountRemaining)
+        console.log(guessCountRemaining, "Guesses Remaining\n")
         if (guessCountRemaining >= 1) {
             askForLetter()
-            
         }
     })
 }
@@ -28,7 +35,6 @@ let guessCountRemaining;
 
 function setupNewWord() {
     guessCountRemaining = 10
-    
     console.log(word + '\n')
 }
 
