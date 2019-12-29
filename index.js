@@ -25,10 +25,9 @@ function askForLetter() {
         console.log(word + '\n')
         guessCountRemaining --;
         console.log(guessCountRemaining, "Guesses Remaining\n")
-        console.log("ANSWER: ", randomWord)
-        console.log("CURRENT USER WORD: ", postCheckString.replace(/\s+/g, ''))
         if (postCheckString.replace(/\s+/g, '') === randomWord) {
-            console.log("time for a new word!")
+            console.log("You got it right!  Next word!")
+            setupNewWord()
         }
         if (guessCountRemaining >= 1) {
             askForLetter()
