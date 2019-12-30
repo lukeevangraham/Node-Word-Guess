@@ -19,11 +19,11 @@ function askForLetter() {
 
         if (preCheckString === postCheckString) {
             console.log("\nINCORRECT!")
+            guessCountRemaining --;
         } else {
             console.log("\n CORRECT!")
         }
         console.log(word + '\n')
-        guessCountRemaining --;
         console.log(guessCountRemaining, "Guesses Remaining\n")
         if (postCheckString.replace(/\s+/g, '') === randomWord) {
             console.log("You got it right!  Next word!")
